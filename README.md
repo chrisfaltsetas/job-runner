@@ -43,4 +43,11 @@ export async function getQueue() {
   return newQueue;
 }
 
+async function doSomething(data) {
+  let queue = await getQueue();
+  let wasAdded = await queue.addToQueue("syncOrder", {
+    ...data,
+  });
+}
+
 ```
